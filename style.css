@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'NexaroundGlow';
+    src: url('nexaround-trial-glow.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #ffdcb4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+    cursor: url('hand-pointer.svg') 16 16, auto; /* Custom cursor initially set */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'NexaroundGlow';
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transform: translateY(-10px);
+    animation: shakeLeftRight 0.5s ease-in-out infinite;
+}
+
+img {
+    max-width: 45%;
+    max-height: 38%;
+    margin: 0;
+    animation: shake 0.5s ease-in-out infinite, pulse 0.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.13);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shakeLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.falling-frog {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: fall 4s linear infinite;
+    cursor: none;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+@keyframes fall {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 100vh;
+    }
+}
+
+@keyframes frog-appear {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.toggle-button {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    background-color: #ffffff;
+    color: grey;
+    font-size: 1rem;
+    font-family: Nexaroundglow;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: auto;
+}
+
